@@ -17,7 +17,7 @@
         });
     
     }
-     document.addEventListener("app.Ready", register_event_handlers, false);
+    document.addEventListener("app.Ready", register_event_handlers, false);
 })();
 
 function GetPlayerProfile(server, playerId){
@@ -31,6 +31,7 @@ function GetPlayerProfile(server, playerId){
             var playerProfile = $.parseJSON(msg);
             //$('#AjaxPlaceHolder').html(playerProfile.player_id + playerProfile.level + playerProfile.icon);
             $('#imgPlayerIcon').attr("src", playerProfile.icon);
+            $('#lblPlayerId').innerHtml = playerProfile.player_id;
         },
         error: function (e) {
             $('#AjaxPlaceHolder').html("Unavailable");
